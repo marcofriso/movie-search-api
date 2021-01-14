@@ -3,7 +3,7 @@
 ## Details
 
 Create a Node.js app which will:
-- [ ] handle all requests from the front-end application, send them to OMDb API and return a result
+- [x] handle all requests from the front-end application, send them to OMDb API and return a result
 - [ ] cache results in Redis
 - [ ] restrict access to API by using Basic authentication
 
