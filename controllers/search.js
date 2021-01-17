@@ -7,8 +7,8 @@ const handleApiCall = (req, res) => {
     ...req.body,
   };
 
-  // console log the search
-  console.log(`https://www.omdbapi.com/?${new URLSearchParams(params)}`);
+  // console log the request body
+  console.log(JSON.stringify(req.body));
 
   fetch(`https://www.omdbapi.com/?${new URLSearchParams(params)}`)
     .then((response) => response.json())
