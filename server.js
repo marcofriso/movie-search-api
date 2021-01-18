@@ -19,6 +19,24 @@ const db = knex({
   },
 });
 
+const checkCache = (req, res, next) => {
+  const id = new URLSearchParams(req.body).toString();
+
+  search.redisClient.get(id, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+      console.log("BE - REDIS-ERROR", err);
+    }
+    if (data !== null) {
+      console.log("REDIS DB", id);
+      res.send(data);
+    } else {
+      console.log("FETCH API", id);
+      next();
+    }
+  });
+};
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -33,7 +51,7 @@ app.post("/signup", (req, res) => {
 
 app.post("/login", login.handleLogin(db, bcrypt));
 
-app.post("/search", (req, res) => {
+app.post("/search", checkCache, (req, res) => {
   search.handleApiCall(req, res);
 });
 
