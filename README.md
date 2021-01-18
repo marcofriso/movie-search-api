@@ -9,6 +9,7 @@ Create a Node.js app which will:
 
 ## Instructions
 
+ - Run PosgreSQL and Redis databases
  - Install: `npm i`
  - Run `npm run start`
 
@@ -16,7 +17,7 @@ Create a Node.js app which will:
 
 - details on `server.js`
 - name: `movie-search`
-- SQL query to generate the tables:
+- SQL queries to generate the tables:
 
 ```
 CREATE TABLE login (

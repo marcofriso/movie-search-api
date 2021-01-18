@@ -28,10 +28,10 @@ const checkCache = (req, res, next) => {
       console.log("BE - REDIS-ERROR", err);
     }
     if (data !== null) {
-      console.log("REDIS DB", id);
+      console.log("Redis-DB", id);
       res.send(data);
     } else {
-      console.log("FETCH API", id);
+      console.log("Fetch-API", id);
       next();
     }
   });
