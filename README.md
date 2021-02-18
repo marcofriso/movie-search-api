@@ -10,7 +10,7 @@ Create a Node.js app which will:
 ## Instructions
 
  - Run PosgreSQL and Redis databases
- - Install: `npm i`
+ - Install: `npm i` or `pnpm i`
  - Run `npm run start`
 
 ### PostgreSQL
